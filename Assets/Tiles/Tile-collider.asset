@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: map_130
+  m_Name: Tile-collider
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 375102503121210036, guid: c042714c882916c48bbd4a53a3404b3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d55a86048e4e3d646beb4a139be75c18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
