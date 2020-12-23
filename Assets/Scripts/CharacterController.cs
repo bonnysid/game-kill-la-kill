@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    public int health = 100;
     public float maxSpeed = 10f;
     private bool isFacingRight = true;
     private Animator anim;
@@ -28,7 +29,7 @@ public class CharacterController : MonoBehaviour
 
         if (move > 0 && !isFacingRight) Flip();
         else if (move < 0 && isFacingRight) Flip();
-
+       
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
         anim.SetBool("Ground", isGrounded);
         anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
