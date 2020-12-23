@@ -37,7 +37,7 @@ public class CharacterController : MonoBehaviour
     }
 
     private void Update() {
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space)) {
+        if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
             anim.SetBool("Ground", false);
             rigidbody2D.AddForce(new Vector2(0, 600));
         }
