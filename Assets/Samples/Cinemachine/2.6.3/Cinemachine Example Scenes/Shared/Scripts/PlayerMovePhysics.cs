@@ -20,7 +20,7 @@ public class PlayerMovePhysics : MonoBehaviour
 
     private void OnEnable()
     {
-        transform.position += new Vector3(10, 0, 0);
+            transform.position += new Vector3(10, 0, 0);
     }
 
     void FixedUpdate()
