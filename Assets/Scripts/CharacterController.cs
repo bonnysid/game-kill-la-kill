@@ -7,11 +7,13 @@ public class CharacterController : MonoBehaviour
     public int health = 100;
     public float maxSpeed = 10f;
     private bool isFacingRight = true;
+    private bool isGrounded = false;
+    private float groundRadius = 0.2f;
+    public int healthPerSec = 5;
+
     private Animator anim;
     private Rigidbody2D rigidbody2D;
-    private bool isGrounded = false;
     public Transform groundCheck;
-    private float groundRadius = 0.2f;
     public LayerMask whatIsGround;
 
     private void Start() {
@@ -20,6 +22,9 @@ public class CharacterController : MonoBehaviour
     }
 
     private void FixedUpdate() {
+
+        if (health <= 0) Destroy(gameObject);
+        if (health < 100 && Time.frameCount % 1000 == 0) health += healthPerSec;
 
         float move = Input.GetAxis("Horizontal");
 
@@ -50,5 +55,9 @@ public class CharacterController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    public void TakeDamage(int damage) {
+        health -= damage;
     }
 }
