@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -23,7 +24,12 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate() {
 
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0)
+        {
+            SceneLoader sceneLoader = new SceneLoader();
+            sceneLoader.GameOver();
+            Destroy(gameObject);
+        }
         if (health < 100 && Time.frameCount % 1000 == 0) health += healthPerSec;
 
         float move = Input.GetAxis("Horizontal");

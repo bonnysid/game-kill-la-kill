@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         target = GameObject.Find("Character");
         direction = target.transform.localScale.x * -1;
         anim = GetComponent<Animator>();
+
     }
     void Update()
     {
