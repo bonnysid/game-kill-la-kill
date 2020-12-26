@@ -18,7 +18,7 @@ MonoBehaviour:
   damage: 15
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   parent: {fileID: 8453047857341582988, guid: 1406160361c2d3b45a2f0394b7c885ea, type: 3}
 --- !u!1001 &2871802886671585922
 PrefabInstance:
